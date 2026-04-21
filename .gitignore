@@ -1,0 +1,13 @@
+# Rust
+target/
+**/*.rs.bk
+
+# Seguridad y VPN (Prohibidos en el repo)
+*.key
+*.pem
+*.p12
+wg0.conf
+.env
+
+# Docker e infrestuctura
+.DS_Store
