@@ -1,26 +1,33 @@
 # Proyecto 2: Pipeline Distribuido IoT/Edge con Tolerancia a Fallos
 
-Este proyecto implementa un sistema robusto en **Rust** para el procesamiento de datos en tiempo real, diseñado para operar sobre una infraestructura de **Docker** y una red **VPN (WireGuard)** bajo condiciones de red degradadas.
+Este proyecto implementa un sistema robusto en **Rust** para el procesamiento de telemetría IoT, diseñado para operar bajo condiciones de red degradada.
+
+## 📐 Arquitectura del Sistema
+![Diagrama de Arquitectura](docs/evidencias/diagrama_arquitectura.png)
 
 ## 🚀 Estructura del Proyecto
-- **/rust**: Código fuente del Sensor, Nodo Edge y Coordinador.
-- **/docker**: Configuraciones de contenedores para cada rol.
-- **/netem**: Scripts para simulación de escenarios de red (latencia, pérdida, etc.).
-- **/vpn**: Configuraciones de infraestructura de red segura.
+- **/rust**: Microservicios de Sensor, Nodo Edge y Coordinador.
+- **/docker**: Dockerfiles e infraestructura de contenedores.
+- **/netem**: Scripts de simulación de red (`tc netem`).
+- **/docs**: Plan de ejecución, Riesgos técnicos y Minutas de Scrum.
+- **/vpn**: Plantillas de configuración para WireGuard.
 
-## 🛠️ Requisitos
-- Docker y Docker Compose
-- Rust (Cargo)
-- WireGuard
-- Herramientas de red (`iproute2`, `iperf3`)
+## 🛠️ Cómo ejecutar el Prototipo (Avance 30 Abril)
+Para probar el flujo actual sin Docker, sigue estos pasos en tres terminales:
 
-## 📈 Escenarios de Red (Simulación)
-El sistema está diseñado para ser evaluado bajo:
-1. Latencia alta
-2. Pérdida de paquetes
-3. Corrupción de datos
-4. Reordenamiento de paquetes
-5. Escenario mixto
+1. **Coordinador:** `cd rust && cargo run -p coordinator`
+2. **Edge Node:** `cd rust && cargo run -p edge`
+3. **Sensor:** `cd rust && cargo run -p sensor`
 
-## 👷 Autor
-- Edgar Arreola (Solo Project)
+## 📡 Simulación de Red
+Para aplicar la latencia de 200ms validada en el avance:
+sudo ./netem/latencia.sh
+
+Para limpiar las reglas de red:
+sudo ./netem/limpiar.sh
+
+👷 Autor
+Edgar Arreola - Programación de Sistemas Avanzados (Solo Project)
+
+
+
