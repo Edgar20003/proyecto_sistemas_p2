@@ -16,4 +16,4 @@
 * [x] Implementar prototipo funcional de Sensor y Coordinador.
 * [ ] Configurar túnel WireGuard (Pendiente).
 
-![Imagen de transmicion de datos en terminales](D:\Documentos\Escuela 2026A\Sistemas operativos\Evidencias\Captura de pantalla 2026-04-21 152243.png)
+![Éxito del Pipeline](evidencias/exito_pipeline.png)
