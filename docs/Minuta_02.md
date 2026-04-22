@@ -11,7 +11,7 @@
 * Actualizar el código del Sensor para cumplir con la versión 0.10 de la crate `rand` (uso de `RngExt` y `random_range`).
 
 ## Evidencias de Resolución de Bloqueos
-![Error de Linker cc](evidencias/error_cc.png)
+![Error de Linker cc](evidencias/error_linker.png)
 *Figura 1: Error detectado por falta de herramientas de compilación en la MV.*
 
 ![Error de Rand](evidencias/error_rand.png)
