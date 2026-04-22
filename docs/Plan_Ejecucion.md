@@ -16,3 +16,14 @@ Se requiere una estrategia de "Multi-stage build" para mantener la infraestructu
 
 6.- Orden de Dependencia en el Arranque: El Coordinador debe estar listo antes que el Edge, y el Edge antes que el Sensor.
 Se requiere configurar correctamente el depends_on y "health checks" en Docker Compose.
+
+## 3. Evidencias de Simulación de Red (iperf3)
+Para validar el impacto del script de latencia, se realizaron pruebas de ancho de banda con `iperf3` en la interfaz local.
+
+### Escenario: Red Normal (Sin Latencia)
+![Ancho de banda normal](evidencias/iperf_normal.png)
+*Figura 3: Rendimiento base sin degradación de red.*
+
+### Escenario: Red Degradada (Latencia 200ms)
+![Ancho de banda degradado](evidencias/iperf_latencia.png)
+*Figura 4: Caída del throughput y aumento de retransmisiones al aplicar tc netem.*

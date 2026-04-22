@@ -20,3 +20,7 @@
 ## Tareas Generadas
 * [x] Resolver errores de compilación.
 * [x] Validar flujo completo Sensor-Edge-Coordinador.
+
+Latencia:
+
+![Error de Rand](evidencias/iperf_latencia.png)
